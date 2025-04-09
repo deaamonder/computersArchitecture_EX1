@@ -63,7 +63,7 @@ public class Students {
 
         int packed = grades[i-1];
         int sum = 0;
-        for (int j = 0; j < 4; j++) { // fix: include exam 1
+        for (int j = 0; j < 4; j++) { 
             sum += (packed >> (j * 8)) & 0xFF;
         }
         return sum / 4.0f;
@@ -72,12 +72,12 @@ public class Students {
 
 
     public float averageExam(int j) {
-        if (grades == null || grades.length == 0 || j < 0 || j > 4) { // fix: j < 4
+        if (grades == null || grades.length == 0 || j < 0 || j > 4) { 
             return -1;
         }
 
         int sum = 0;
-        for (int i = 0; i < grades.length; i++) { // fix: include all students
+        for (int i = 0; i < grades.length; i++) { 
             sum += (grades[i] >> ((j-1) * 8)) & 0xFF;
         }
         return sum / (float) grades.length;
